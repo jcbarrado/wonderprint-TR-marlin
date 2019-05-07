@@ -696,7 +696,7 @@
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4[, E5]]]]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 250, 250, 50, 50 }
+#define DEFAULT_MAX_FEEDRATE          { 250, 250, 20, 50 }
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
@@ -737,7 +737,7 @@
 #if DISABLED(JUNCTION_DEVIATION)
   #define DEFAULT_XJERK 20.0 //10
   #define DEFAULT_YJERK 20.0 //10
-  #define DEFAULT_ZJERK 10.0
+  #define DEFAULT_ZJERK  4.0
 #endif
 
 #define DEFAULT_EJERK   20.0  // May be used by Linear Advance //5.0****
