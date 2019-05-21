@@ -1448,11 +1448,11 @@
  */
 #if HAS_TRINAMIC
 
-  #define HOLD_MULTIPLIER   0.5  // Scales down the holding current from run current
+  #define HOLD_MULTIPLIER   1  // Scales down the holding current from run current
   #define INTERPOLATE      false  // Interpolate X/Y/Z_MICROSTEPS to 256
 
   #if AXIS_IS_TMC(X)
-    #define X_CURRENT     900  // (mA) RMS current. Multiply by 1.414 for peak current.
+    #define X_CURRENT     850 //850  // (mA) RMS current. Multiply by 1.414 for peak current.
     #define X_MICROSTEPS   16  // 0..256
     #define X_RSENSE     0.11
   #endif
@@ -1464,7 +1464,7 @@
   #endif
 
   #if AXIS_IS_TMC(Y)
-    #define Y_CURRENT     900
+    #define Y_CURRENT     850 //850
     #define Y_MICROSTEPS   16
     #define Y_RSENSE     0.11
   #endif
@@ -1476,7 +1476,7 @@
   #endif
 
   #if AXIS_IS_TMC(Z)
-    #define Z_CURRENT    1000
+    #define Z_CURRENT    1185 //1200
     #define Z_MICROSTEPS   16
     #define Z_RSENSE     0.11
   #endif
@@ -1494,7 +1494,7 @@
   #endif
 
   #if AXIS_IS_TMC(E0)
-    #define E0_CURRENT    900
+    #define E0_CURRENT    850
     #define E0_MICROSTEPS  16
     #define E0_RSENSE    0.11
   #endif
@@ -1573,7 +1573,7 @@
    */
   #define STEALTHCHOP_XY
   #define STEALTHCHOP_Z
-  #define STEALTHCHOP_E
+  //#define STEALTHCHOP_E
 
   /**
    * Optimize spreadCycle chopper parameters by using predefined parameter sets
@@ -1589,7 +1589,7 @@
    * Define you own with
    * { <off_time[1..15]>, <hysteresis_end[-3..12]>, hysteresis_start[1..8] }
    */
-  #define CHOPPER_TIMING CHOPPER_DEFAULT_24V
+  #define CHOPPER_TIMING CHOPPER_PRUSAMK3_24V
 
   /**
    * Monitor Trinamic drivers for error conditions,
@@ -1602,7 +1602,7 @@
    * M912 - Clear stepper driver overtemperature pre-warn condition flag.
    * M122 - Report driver parameters (Requires TMC_DEBUG)
    */
-  //#define MONITOR_DRIVER_STATUS
+  #define MONITOR_DRIVER_STATUS
 
   #if ENABLED(MONITOR_DRIVER_STATUS)
     #define CURRENT_STEP_DOWN     50  // [mA]
@@ -1657,7 +1657,7 @@
   //#define SENSORLESS_PROBING // TMC2130 only
 
   #if EITHER(SENSORLESS_HOMING, SENSORLESS_PROBING)
-    #define X_STALL_SENSITIVITY  4
+    #define X_STALL_SENSITIVITY  5
     #define Y_STALL_SENSITIVITY  4
     //#define Z_STALL_SENSITIVITY  8
   #endif

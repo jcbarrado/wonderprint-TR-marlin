@@ -696,7 +696,7 @@
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4[, E5]]]]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 250, 250, 20, 50 }
+#define DEFAULT_MAX_FEEDRATE          { 250, 250, 20, 100 }
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
@@ -704,7 +704,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4[, E5]]]]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 500, 5000 }
+#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 300, 5000 }
 
 /**
  * Default Acceleration (change/s) change = mm/s
@@ -737,7 +737,7 @@
 #if DISABLED(JUNCTION_DEVIATION)
   #define DEFAULT_XJERK 20.0 //10
   #define DEFAULT_YJERK 20.0 //10
-  #define DEFAULT_ZJERK  4.0
+  #define DEFAULT_ZJERK  0.3
 #endif
 
 #define DEFAULT_EJERK   20.0  // May be used by Linear Advance //5.0****
@@ -967,7 +967,7 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#define INVERT_E0_DIR true
+#define INVERT_E0_DIR false
 #define INVERT_E1_DIR false
 #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
@@ -1282,8 +1282,8 @@
 #endif
 
 // Homing speeds (mm/m)
-#define HOMING_FEEDRATE_XY (50*60)
-#define HOMING_FEEDRATE_Z  (20*60)
+#define HOMING_FEEDRATE_XY (40*60)
+#define HOMING_FEEDRATE_Z  (6*60)
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
