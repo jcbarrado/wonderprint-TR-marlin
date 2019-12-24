@@ -125,7 +125,7 @@
 // Please choose the name from boards.h that matches your setup
 #ifndef MOTHERBOARD
   //#define MOTHERBOARD BOARD_RAMPS_14_EEF
-  #define MOTHERBOARD BOARD_RAMPS_14_EFB       // gMax users please note:  This is a Roxy modification.   I print on glass and
+  #define MOTHERBOARD BOARD_MKS_GEN_13       // gMax users please note:  This is a Roxy modification.   I print on glass and
                                                // I use Marlin to control the bed's temperature.  So, if you have a single nozzle
                                                // machine, this will work fine for you.  You just set the
                                                // #define TEMP_SENSOR_BED 75 to 0 down below so Marlin doesn't mess with the bed
@@ -621,7 +621,7 @@
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 250, 250, 50, 50 }
+#define DEFAULT_MAX_FEEDRATE          { 250, 250, 20, 50 }
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
@@ -629,7 +629,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 1000, 5000 }
+#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 500, 5000 }
 
 /**
  * Default Acceleration (change/s) change = mm/s
@@ -653,7 +653,7 @@
  */
 #define DEFAULT_XJERK                  20
 #define DEFAULT_YJERK                  20
-#define DEFAULT_ZJERK                  0.7
+#define DEFAULT_ZJERK                  0.3
 #define DEFAULT_EJERK                  20
 
 /**
