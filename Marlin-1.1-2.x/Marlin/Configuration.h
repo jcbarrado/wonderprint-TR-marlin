@@ -125,7 +125,7 @@
 // Please choose the name from boards.h that matches your setup
 #ifndef MOTHERBOARD
   //#define MOTHERBOARD BOARD_RAMPS_14_EEF
-  #define MOTHERBOARD BOARD_MKS_GEN_13       // gMax users please note:  This is a Roxy modification.   I print on glass and
+  #define MOTHERBOARD BOARD_RAMPS_14_EFB       // gMax users please note:  This is a Roxy modification.   I print on glass and
                                                // I use Marlin to control the bed's temperature.  So, if you have a single nozzle
                                                // machine, this will work fine for you.  You just set the
                                                // #define TEMP_SENSOR_BED 75 to 0 down below so Marlin doesn't mess with the bed
@@ -467,7 +467,7 @@
  * Note: For Bowden Extruders make this large enough to allow load/unload.
  */
 #define PREVENT_LENGTHY_EXTRUDE
-#define EXTRUDE_MAXLENGTH 200
+#define EXTRUDE_MAXLENGTH 400
 
 //===========================================================================
 //======================== Thermal Runaway Protection =======================
@@ -614,7 +614,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 320, 100 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 320, 415 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -861,7 +861,7 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#define INVERT_E0_DIR false
+#define INVERT_E0_DIR true
 #define INVERT_E1_DIR false
 #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
@@ -885,8 +885,8 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 100   // These numbers are not accurate for an unaltered gMax 1.5+ printer.  My print bed
-#define Y_BED_SIZE 100   // is inset a noticable amount from the edge of the bed.  Combined with the inset,
+#define X_BED_SIZE 80   // These numbers are not accurate for an unaltered gMax 1.5+ printer.  My print bed
+#define Y_BED_SIZE 80   // is inset a noticable amount from the edge of the bed.  Combined with the inset,
                          // the nozzle can reach all cordinates of the mesh.
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
@@ -1884,14 +1884,14 @@
 #endif
 
 // Support for Adafruit Neopixel LED driver
-//#define NEOPIXEL_LED
+#define NEOPIXEL_LED
 #if ENABLED(NEOPIXEL_LED)
-  #define NEOPIXEL_TYPE   NEO_GRBW // NEO_GRBW / NEO_GRB - four/three channel driver type (defined in Adafruit_NeoPixel.h)
+  #define NEOPIXEL_TYPE   NEO_GRB // NEO_GRBW / NEO_GRB - four/three channel driver type (defined in Adafruit_NeoPixel.h)
   #define NEOPIXEL_PIN    4        // LED driving pin on motherboard 4 => D4 (EXP2-5 on Printrboard) / 30 => PC7 (EXP3-13 on Rumba)
-  #define NEOPIXEL_PIXELS 30       // Number of LEDs in the strip
+  #define NEOPIXEL_PIXELS 1       // Number of LEDs in the strip
   #define NEOPIXEL_IS_SEQUENTIAL   // Sequential display for temperature change - LED by LED. Disable to change all LEDs at once.
-  #define NEOPIXEL_BRIGHTNESS 127  // Initial brightness (0-255)
-  //#define NEOPIXEL_STARTUP_TEST  // Cycle through colors at startup
+  #define NEOPIXEL_BRIGHTNESS 255  // Initial brightness (0-255)
+  #define NEOPIXEL_STARTUP_TEST  // Cycle through colors at startup
 #endif
 
 /**

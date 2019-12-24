@@ -95,8 +95,8 @@ const PinInfo pin_array[] PROGMEM = {
   // manually add pins ...
   #if SERIAL_PORT == 0
     #if AVR_ATmega2560_FAMILY
-      { RXD_NAME, 2, true }, //D1
-      { TXD_NAME, 1, true }, //D2
+      { RXD_NAME, 0, true },
+      { TXD_NAME, 1, true },
     #elif AVR_ATmega1284_FAMILY
       { RXD_NAME, 8, true },
       { TXD_NAME, 9, true },
